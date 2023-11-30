@@ -46,12 +46,20 @@ class MostrarCarros extends StatelessWidget {
                 onPressed: () {
                   final favoritosProvider =
                       Provider.of<FavoritosCarros>(context, listen: false);
-                  favoritosProvider.adicionarAoFavoritos(carros[index]);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Carro adicionado aos favoritos!'),
-                    ),
-                  );
+                  if (!favoritosProvider.carros.contains(carros[index])) {
+                    favoritosProvider.adicionarAoFavoritos(carros[index]);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Carro adicionado aos favoritos!'),
+                      ),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Este carro já está nos favoritos!'),
+                      ),
+                    );
+                  }
                 },
                 child: Text('Adicionar aos Favoritos'),
               ),

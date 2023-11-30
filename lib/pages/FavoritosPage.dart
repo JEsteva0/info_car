@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:info_car_app/models/favoritos_carros.dart';
 import 'package:provider/provider.dart';
-import 'MostrarCarros.dart';  // Importe a página MostrarCarros.dart
+import 'MostrarCarros.dart';
 
 class PageFavoritos extends StatefulWidget {
   const PageFavoritos({super.key});
@@ -27,9 +27,25 @@ class _PageFavoritosState extends State<PageFavoritos> {
             child: Text("Mostrar Carros"),
           ),
           SizedBox(height: 20),
-          Text(
-            "Quantidade de carros favoritos: ${fav.carros.length}",
-            style: TextStyle(fontSize: 48),
+          Expanded(
+            child: ListView.builder(
+              itemCount: fav.carros.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  margin: EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: Text(fav.carros[index].modelo),
+                    subtitle: Text(fav.carros[index].marca),
+                    leading: Image.network(
+                      fav.carros[index].imgUrl,
+                      width: 80,
+                      height: 80,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),
