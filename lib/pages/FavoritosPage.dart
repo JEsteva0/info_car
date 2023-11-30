@@ -43,11 +43,20 @@ class _PageFavoritosState extends State<PageFavoritos> {
                       height: 80,
                       fit: BoxFit.cover,
                     ),
-                    trailing: ElevatedButton(
-                      onPressed: () {
-                        _removerDosFavoritos(context, fav.carros[index]);
-                      },
-                      child: Text('Remover dos Favoritos'),
+                    trailing: SizedBox(
+                      width: 100,  
+                      child: ElevatedButton(
+                        onPressed: () {
+                          _removerDosFavoritos(context, fav.carros[index]);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(8.0),  
+                        ),
+                        child: Text(
+                          'Remover',
+                          style: TextStyle(fontSize: 12),  
+                        ),
+                      ),
                     ),
                   ),
                 );
@@ -60,7 +69,8 @@ class _PageFavoritosState extends State<PageFavoritos> {
   }
 
   void _removerDosFavoritos(BuildContext context, Carro carro) {
-    final favoritosProvider = Provider.of<FavoritosCarros>(context, listen: false);
+    final favoritosProvider =
+        Provider.of<FavoritosCarros>(context, listen: false);
     favoritosProvider.removerDosFavoritos(carro);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
