@@ -9,6 +9,10 @@ class FavoritosCarros extends ChangeNotifier {
 
   void adicionarAoFavoritos(Carro carro) {
     _carrosFavoritos.add(carro);
-    notifyListeners(); // Notifique os ouvintes sobre a alteração
+    notifyListeners(); 
+  }
+  void removerDosFavoritos(Carro carro) {
+    _carrosFavoritos.remove(carro);
+    notifyListeners();
   }
 }
