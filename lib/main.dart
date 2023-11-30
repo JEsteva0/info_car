@@ -4,7 +4,6 @@ import 'package:info_car_app/pages/carros.dart';
 import 'package:info_car_app/pages/FavoritosPage.dart';
 import 'package:info_car_app/pages/PerfilPage.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
 
 void main() {
   runApp(

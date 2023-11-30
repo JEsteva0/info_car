@@ -1,15 +1,14 @@
-import 'dart:collection';
-
+// FavoritosCarros.dart
 import 'package:flutter/material.dart';
 import 'package:info_car_app/models/carro.dart';
 
 class FavoritosCarros extends ChangeNotifier {
-  final List<Carro> _carros = [];
+  List<Carro> _carrosFavoritos = [];
 
-  UnmodifiableListView<Carro> get carros => UnmodifiableListView(_carros);
+  List<Carro> get carros => _carrosFavoritos;
 
-  void add(Carro carro) {
-    _carros.add(carro);
-    notifyListeners();
+  void adicionarAoFavoritos(Carro carro) {
+    _carrosFavoritos.add(carro);
+    notifyListeners(); // Notifique os ouvintes sobre a alteração
   }
 }
