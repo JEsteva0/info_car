@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:info_car_app/models/favoritos_carros.dart';
 import 'package:info_car_app/pages/carros.dart';
-import 'package:info_car_app/pages/favoritos.dart';
-import 'package:info_car_app/pages/perfil.dart';
+import 'package:info_car_app/pages/FavoritosPage.dart';
+import 'package:info_car_app/pages/PerfilPage.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
