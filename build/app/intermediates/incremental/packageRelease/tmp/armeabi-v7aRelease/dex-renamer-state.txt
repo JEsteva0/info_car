@@ -1,0 +1,4 @@
+#Thu Nov 30 18:51:04 GMT-04:00 2023
+base.0=C\:\\Users\\P Sawczuk\\Documents\\FlutterProjets\\info_car_app - f\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
